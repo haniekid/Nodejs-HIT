@@ -1,7 +1,11 @@
 const express = require("express");
 const path = require("path");
-const router = require("./src/routes");
 const ejs = require("ejs");
+
+const routes = require("./src/routes");
+const db = require("./src/config/db/");
+// connect to database
+db.connect();
 
 const app = express();
 const port = 3000;
@@ -12,10 +16,14 @@ app.use(express.json());
 
 app.set("views", path.join(__dirname, "./src/views"));
 app.set("view engine", "ejs");
-app.use("/static", express.static(path.join(__dirname, "src/public")));
-app.use(router);
 
+// use static folder
+app.use("/static", express.static(path.join(__dirname, "src/public")));
+
+// routes init
+app.use(routes);
+
+// start web server, lắng nghe port
 app.listen(port, () => {
   console.log("http://localhost:" + port);
 });
-

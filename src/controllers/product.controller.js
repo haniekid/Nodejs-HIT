@@ -1,4 +1,5 @@
 const data = require("../data/dataProducts");
+const Product = require("./../models/product.model");
 const getProducts = (req, res) => {
   // const products = require("../data/dataProducts");
 

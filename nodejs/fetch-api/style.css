@@ -1,0 +1,16 @@
+body .container{
+    display:flex;
+    justify-content: space-between;
+}
+
+.create div{
+    padding: 1rem;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
