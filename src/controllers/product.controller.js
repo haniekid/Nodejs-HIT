@@ -10,30 +10,13 @@ const getProducts = (req, res) => {
     products = products.filter((item) => item.price == req.query.price);
   }
   res.json(products);
-  // Product.find({}, function (err, products) {
-  //   if (!err) {
-  //     res.json(products);
-  //   } else {
-  //     res.status(404).json({ error: "ERROR!!!" });
-  //   }
-  // });
-  // res.render("products");
 };
 
 // [GET] / /products/id
 const getProductbyId = (req, res) => {
-  // let products = data;
-  // products = products.filter((product) => product.id == req.params.productId);
-  // res.json(products);
-
-  Product.findById(id, function (err, products) {
-    if (!err) {
-      res.json(products);
-    } else {
-      res.status(404).json({ error: "ERROR!!!" });
-    }
-  });
-  res.render("products");
+  let products = data;
+  products = products.filter((product) => product.id == req.params.productId);
+  res.json(products);
 };
 
 // [GET] / /products/create
@@ -41,6 +24,7 @@ const createProducts = (req, res) => {
   res.render("add-product", {
     title: "Thêm sản phẩm",
   });
+  console.log("ADDDDDDDDDDDDDDD");
 };
 
 // [POST] / /products/post
