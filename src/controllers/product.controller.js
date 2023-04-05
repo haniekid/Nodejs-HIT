@@ -1,15 +1,22 @@
 const data = require("../data/dataProducts");
-const Product = require("./../models/product.model");
+// const Product = require("./../models/product.model");
 
 // [GET] / /products
 
 // ?key=value
-const getProducts = (req, res) => {
+const getProducts = (req, res, next) => {
   let products = data;
   if (req.query.price) {
-    products = products.filter((item) => item.price == req.query.price);
+    products = products.filter((item) => item.price >= req.query.price);
   }
   res.json(products);
+};
+
+// [GET] / /products/create
+const createProducts = (req, res) => {
+  let products = data;
+  res.json(products);
+  console.log(products);
 };
 
 // [GET] / /products/id
@@ -19,25 +26,25 @@ const getProductbyId = (req, res) => {
   res.json(products);
 };
 
-// [GET] / /products/create
-const createProducts = (req, res) => {
-  res.render("add-product", {
-    title: "Thêm sản phẩm",
-  });
-  console.log("ADDDDDDDDDDDDDDD");
-};
-
 // [POST] / /products/post
 const postProducts = (req, res) => {
   const product = req.body;
   res.json(product);
 };
 
-// [PUT] / /products/update
-const updateProductById = (req, res) => {};
+// [GET] / /products/updateId/:id
+const updateProductById = (req, res) => {
+  // update abcxyz
+  // return products after updating
+  getProductbyId(req, res);
+};
 
-// [DELETE] / /products/delete
-const deleteProductById = (req, res) => {};
+// [GET]  / /products/deleteId/:productId
+const deleteProductById = (req, res) => {
+  let products = data;
+  products = products.filter((product) => product.id != req.params.productId);
+  res.json(products);
+};
 
 module.exports = {
   getProducts,

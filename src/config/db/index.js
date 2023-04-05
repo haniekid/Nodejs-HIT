@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 async function connect() {
   try {
-    mongoose.connect("mongodb://localhost:27017/hit_nodejs", {
+    mongoose.connect("mongodb://localhost:27017/hit-nodejs", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
