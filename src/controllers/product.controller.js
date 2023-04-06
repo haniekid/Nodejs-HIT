@@ -1,13 +1,25 @@
 const data = require("../data/dataProducts");
-const Product = require("./../models/product.model");
+// const Product = require("./../models/product.model");
 
 // [GET] / /products
 
 // ?key=value
 const getProducts = (req, res, next) => {
-  Product.find({})
-    .then((products) => res.render("products"))
-    .catch((err) => next(err));
+  let products = data;
+  if (req.query.price) {
+    products = products.filter((item) => item.price >= req.query.price);
+  }
+  res.json(products);
+};
+
+// [GET] / /products/create
+const createProducts = (req, res) => {
+  let products = data;
+  const productUpdate = req.body;
+  products.push(productUpdate);
+  res.json({
+    products,
+  });
 };
 
 // [GET] / /products/id
@@ -20,14 +32,6 @@ const getProductbyId = (req, res) => {
   }
   res.status(404).json({
     message: "NOT FOUND!!!",
-  });
-};
-
-// [POST] / /products/create
-const createProducts = (req, res) => {
-  const product = req.body;
-  res.json({
-    product,
   });
 };
 
