@@ -31,15 +31,19 @@ const createProducts = (req, res) => {
   });
 };
 
-// [GET] / /products/updateId/:id
+// [PUT] / /products/updateId/:id
 const updateProductById = (req, res) => {
   // update
-
+  let products = data;
+  const productUpdate = req.body;
+  products.push(productUpdate);
   // return products after updating
-  getProductbyId(req, res);
+  res.json({
+    products,
+  });
 };
 
-// [GET]  / /products/deleteId/:productId
+// [DELETE]  / /products/deleteId/:productId
 const deleteProductById = (req, res) => {
   let products = data;
   products = products.filter((product) => product.id != req.params.productId);
