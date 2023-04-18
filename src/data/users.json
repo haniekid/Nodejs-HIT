@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "avatar": "/avatars/2020605518.jpg",
+    "fullName": "Trương Thành Hưng",
+    "dateOfBirth": "23/05/2002",
+    "password": "2020605518",
+    "studentCode": "2020605518",
+    "className": "CNTT04",
+    "schoolYear": "15",
+    "clubYear": "12"
+  },
+  {
+    "id": 2,
+    "avatar": "/avatars/2020605518.jpg",
+    "fullName": "Đinh Tấn Hưng",
+    "dateOfBirth": "31/02/2002",
+    "password": "2020605518",
+    "studentCode": "2020605518",
+    "className": "KTPM02",
+    "schoolYear": "15",
+    "clubYear": "12"
+  },
+  {
+    "id": 3,
+    "avatar": "/avatars/2020605518.jpg",
+    "fullName": "Trịnh Thu Hà",
+    "dateOfBirth": "11/11/2003",
+    "password": "2021606058",
+    "studentCode": "2021606058",
+    "className": "KTPM01",
+    "schoolYear": "16",
+    "clubYear": "13"
+  },
+  {
+    "id": 4,
+    "avatar": "/avatars/2020605518.jpg",
+    "fullName": "Lưu Huyền Thương",
+    "dateOfBirth": "11/11/2003",
+    "password": "2021606058",
+    "studentCode": "2021606058",
+    "className": "KTPM01",
+    "schoolYear": "16",
+    "clubYear": "13"
+  },
+  {
+    "id": 55,
+    "avatar": "/avatars/2020605518.jpg",
+    "fullName": "Trương Thành",
+    "dateOfBirth": "23/05/2002",
+    "password": "2020605518",
+    "studentCode": "2020605518",
+    "className": "CNTT04",
+    "schoolYear": "15",
+    "clubYear": "15"
+  }
+]

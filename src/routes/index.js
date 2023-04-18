@@ -1,13 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const productRoutes = require("./product.route");
-
-// router.use("/products", productRoutes);
+const userRoutes = require("./user.route");
 
 const routes = [
   {
-    path: "/products",
-    route: productRoutes,
+    path: "/users",
+    route: userRoutes,
   },
 ];
 
