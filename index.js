@@ -1,17 +1,28 @@
 const express = require("express");
-const path = require("path");
-const router = require("./src/routes");
-const ejs = require("ejs");
-const { request } = require("http");
+const router = require("./routes");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const errorMiddeware = require("./src/middlewares/error.middleware");
 
 const app = express();
-const port = 3000;
 
-app.set("views", path.join(__dirname, "./src/views"));
-app.set("view engine", "ejs");
-app.use("/static", express.static(path.join(__dirname, "src/public")));
+app.use(express.json());
 app.use(router);
 
+dotenv.config();
+
+const port = process.env.PORT || 3000;
+const mongoURI = process.env.DB_URL || "mongodb://127.0.0.1:27017/UserDefault";
+
+mongoose
+  .connect(mongoURI)
+  .then(() => console.log("Connect database successfully!"))
+  .catch((err) => {
+    console.log(err);
+  });
+
+app.use(errorMiddeware);
+
 app.listen(port, () => {
-  console.log("http://localhost:" + port);
+  console.log(`Example app listening on port ${port}`);
 });
