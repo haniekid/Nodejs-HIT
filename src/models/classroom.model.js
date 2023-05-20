@@ -13,7 +13,7 @@ const classroomSchema = new Schema(
     },
     startTime: {
       type: Date,
-      required: true,
+      required: [true, "Please provide classroom startTime!"],
     },
     endTime: Date,
     schedule: String,
